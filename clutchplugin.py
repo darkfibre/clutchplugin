@@ -46,8 +46,8 @@ incBitePoint = PhysicalInputVariable(
 )
 
 g_bitePoint = float(bitePoint.value)
-g_leftValue = 0.0
-g_rightValue = 0.0
+g_leftValue = -1.0
+g_rightValue = -1.0
 
 def update_axis(vjoy):
     leftTarget = (((1+g_leftValue) * (g_bitePoint/100.0))-1)
