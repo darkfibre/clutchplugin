@@ -45,19 +45,19 @@ incBitePoint = PhysicalInputVariable(
     [gremlin.common.InputType.JoystickButton]
 )
 
-g_bitePoint = bitePoint.value
+g_bitePoint = float(bitePoint.value)
 g_leftValue = 0.0
 g_rightValue = 0.0
 
 def update_axis(vjoy):
-    leftPaddleTarget = g_leftValue * (g_bitePoint/100)
-    value = gremlin.util.clamp(max(leftPaddleTarget,g_rightValue),-1.0,1.0)
+    leftTarget = (((1+g_leftValue) * (g_bitePoint/100.0))-1)
+    value = gremlin.util.clamp(max(leftTarget,g_rightValue),-1.0,1.0)
     vjoy[output.vjoy_id].axis(output.input_id).value = value
 
 decorator_leftPaddle = leftPaddle.create_decorator(mode.value)
 decorator_rightPaddle = rightPaddle.create_decorator(mode.value)
-decorator_incBitePoint = incBitePoint.create_decorator(mode.value)
 decorator_decBitePoint = decBitePoint.create_decorator(mode.value)
+decorator_incBitePoint = incBitePoint.create_decorator(mode.value)
 
 @decorator_leftPaddle.axis(leftPaddle.input_id)
 def leftPaddleAxis(event, vjoy):
@@ -71,14 +71,16 @@ def rightPaddleAxis(event, vjoy):
     g_rightValue = event.value
     update_axis(vjoy)
 
-@decorator_incBitePoint.button(incBitePoint.input_id)
-def incBPbtn(event, vjoy):
-    global g_bitePoint
-    g_bitePoint += 1 if event.is_pressed else g_bitePoint
-    update_axis(vjoy)
-
 @decorator_decBitePoint.button(decBitePoint.input_id)
 def decBPbtn(event, vjoy):
     global g_bitePoint
-    g_bitePoint -= 1 if event.is_pressed else g_bitePoint
+    if event.is_pressed and g_bitePoint > 1.0:
+        g_bitePoint -= 1
+    update_axis(vjoy)
+
+@decorator_incBitePoint.button(incBitePoint.input_id)
+def incBPbtn(event, vjoy):
+    global g_bitePoint
+    if event.is_pressed and g_bitePoint < 100.0:
+        g_bitePoint += 1
     update_axis(vjoy)
