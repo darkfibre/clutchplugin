@@ -1,8 +1,6 @@
 # clutchplugin by Ryan Otis
 
 import gremlin
-import threading
-import time
 from gremlin.user_plugin import *
 
 mode = ModeVariable("Mode", "Mode in which to use these settings")
