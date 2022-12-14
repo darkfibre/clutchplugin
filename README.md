@@ -27,7 +27,7 @@ If you have a Fanatec wheel with clutch paddles and you use a [Sim Racing Machin
 * Ensure the controls you assigned in Joystick Gremlin are not *also* assigned in iRacing, as this may give unexpected results.
 * Launch iRacing and go to **Options -> Controls**
   * Alt-Tab to Joystick Gremlin and go to **Tools -> Input Repeater**, this will enable a feature to repeat your most recent input multiple times on the virtual device, designed to assist in assigning controls.
-  * Alt-Tab back to iRacing, select **second clutch**.
+  * Alt-Tab back to iRacing, select **second clutch**. (You could also do the primary clutch control, it doesn't matter)
   * Pull and release one of the paddles, wait a few seconds for iRacing to recognize the re-activation of the vjoy axis.
   * Click **Done**.
   * Go back to Joystick gremlin and **disable the Input Repeater**.
