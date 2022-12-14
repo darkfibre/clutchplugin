@@ -20,7 +20,7 @@ If you have a Fanatec wheel with clutch paddles and you use a [Sim Racing Machin
 	* Assign paddles and key bindings for adjusting bite point
 * Click on the **Activate** button on the toolbar. 
 * **Save** the configuration in Joystick Gremlin, you can also make it auto-activate in the settings if you prefer.
-* *Optional:* Launch **vJoy Monitor** and verify the buttons on the vJoy device are triggered as you press different buttons.
+* *Optional:* Launch **vJoy Monitor** and verify the axis on the vJoy device is activated as you pull the paddles and adjust the bite point. This is a good time to familiarize yourself with how the bite point adjustment works.
 
 ### iRacing Setup ###
 
