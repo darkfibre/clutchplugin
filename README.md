@@ -14,7 +14,8 @@ If you have a Fanatec wheel with clutch paddles and you use a [Sim Racing Machin
 ### Joystick Gremlin Setup ###
 
 * Run Joystick Gremlin and go to the **Plugins** tab.
-* Add a plugin, select the clutchplugin.py file you downloaded from this repository.
+* Download clutchplugin.py from this repository, put it anywhere you like.
+* Add a plugin, select the clutchplugin.py file you previously downloaded.
 * Click on the small gear to configure the plugin.
 	* Make sure the correct vJoy device is selected.
 	* Assign paddles and key bindings for adjusting bite point
@@ -26,7 +27,7 @@ If you have a Fanatec wheel with clutch paddles and you use a [Sim Racing Machin
 
 * Ensure the controls you assigned in Joystick Gremlin are not *also* assigned in iRacing, as this may give unexpected results.
 * Launch iRacing and go to **Options -> Controls**
-  * Alt-Tab to Joystick Gremlin and go to **Tools -> Input Repeater**, this will enable a feature to repeat your most recent input multiple times on the virtual device, designed to assist in assigning controls. This step is only required if iRacing detects the physical paddle moving instead of the virtual axis.
+  * *Optional:* Alt-Tab to Joystick Gremlin and go to **Tools -> Input Repeater**, this will enable a feature to repeat your most recent input multiple times on the virtual device, designed to assist in assigning controls. This step is only required if iRacing detects the physical paddle moving instead of the virtual axis.
   * Alt-Tab back to iRacing, select **second clutch**. (You could also do the primary clutch control, but it requires you to recalibrate all of the pedals)
   * Slowly pull and release the RIGHT paddle, wait a few seconds for iRacing to recognize the re-activation of the vjoy axis. You will see it cycle a few times.
   * Click **Done**.
