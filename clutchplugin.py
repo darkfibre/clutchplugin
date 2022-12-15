@@ -47,8 +47,6 @@ g_bitePoint = float(bitePoint.value)
 g_leftValue = -1.0
 g_rightValue = -1.0
 
-tts = gremlin.tts.TextToSpeech()
-
 def update_axis(vjoy):
     leftTarget = (((1+g_leftValue) * (g_bitePoint/100.0))-1)
     value = gremlin.util.clamp(max(leftTarget,g_rightValue),-1.0,1.0)
@@ -76,7 +74,6 @@ def decBPbtn(event, vjoy):
     global g_bitePoint
     if event.is_pressed and g_bitePoint > 1.0:
         g_bitePoint -= 1
-    tts.speak(string(g_bitePoint))
     update_axis(vjoy)
 
 @decorator_incBitePoint.button(incBitePoint.input_id)
@@ -84,5 +81,4 @@ def incBPbtn(event, vjoy):
     global g_bitePoint
     if event.is_pressed and g_bitePoint < 100.0:
         g_bitePoint += 1
-    tts.speak(string(g_bitePoint))
     update_axis(vjoy)
